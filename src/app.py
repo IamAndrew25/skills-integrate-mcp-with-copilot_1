@@ -16,8 +16,8 @@ app = FastAPI(title="Mergington High School API",
 
 # Mount the static files directory
 current_dir = Path(__file__).parent
-app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
-          "static")), name="static")
+static_dir = os.path.join(current_dir, "static")
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # In-memory activity database
 activities = {
@@ -78,8 +78,8 @@ activities = {
 }
 
 
-@app.get("/")
-def root():
+@app.get("/", include_in_schema=False)
+async def root():
     return RedirectResponse(url="/static/index.html")
 
 
