@@ -1,4 +1,4 @@
-/* Reset y estilos base */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,133 +7,121 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: limegreen; /* texto verde lima */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  background: #fff;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+header {
+  background: linear-gradient(90deg, #32CD32 0%, #fff 100%);
+  color: #222;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  border-bottom: 4px solid #32CD32;
+}
 
-  body {
-    background: #fff;
-    color: #222;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+.mascot-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
 
-  header {
-    background: linear-gradient(90deg, #32CD32 0%, #fff 100%);
-    color: #222;
-    padding: 2rem 0 1rem 0;
-    text-align: center;
-    border-bottom: 4px solid #32CD32;
-  }
+.mascot {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #32CD32;
+  box-shadow: 0 2px 8px rgba(50,205,50,0.2);
+}
 
-  .mascot-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-  }
+.school-pride {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #32CD32;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+}
 
-  .mascot {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: #fff;
-    border: 2px solid #32CD32;
-    box-shadow: 0 2px 8px rgba(50,205,50,0.2);
-  }
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #f8fff8;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(50,205,50,0.08);
+  padding: 2rem;
+}
 
-  .school-pride {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #32CD32;
-    margin-top: 0.5rem;
-    letter-spacing: 1px;
-  }
+.activities h2, .signup h2 {
+  color: #32CD32;
+  margin-bottom: 0.5rem;
+}
 
-  main {
-    max-width: 600px;
-    margin: 2rem auto;
-    background: #f8fff8;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(50,205,50,0.08);
-    padding: 2rem;
-  }
+.activities ul {
+  list-style: none;
+  padding: 0;
+}
 
-  .activities h2, .signup h2 {
-    color: #32CD32;
-    margin-bottom: 0.5rem;
-  }
+.activities li {
+  background: #eaffea;
+  color: #222;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #32CD32;
+}
 
-  .activities ul {
-    list-style: none;
-    padding: 0;
-  }
+.signup form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-  .activities li {
-    background: #eaffea;
-    color: #222;
-    margin: 0.5rem 0;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    border-left: 4px solid #32CD32;
-  }
+.signup label {
+  font-weight: 500;
+  color: #222;
+}
 
-  .signup form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
+.signup input, .signup select {
+  padding: 0.5rem;
+  border: 1px solid #32CD32;
+  border-radius: 4px;
+  font-size: 1rem;
+}
 
-  .signup label {
-    font-weight: 500;
-    color: #222;
-  }
+.signup button {
+  background: #32CD32;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
-  .signup input, .signup select {
-    padding: 0.5rem;
-    border: 1px solid #32CD32;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
+.signup button:hover {
+  background: #228B22;
+}
 
-  .signup button {
-    background: #32CD32;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 0.7rem 1.2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
+#signupResult {
+  margin-top: 1rem;
+  color: #32CD32;
+  font-weight: bold;
+}
 
-  .signup button:hover {
-    background: #228B22;
-  }
-
-  #signupResult {
-    margin-top: 1rem;
-    color: #32CD32;
-    font-weight: bold;
-  }
-
-  footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #32CD32;
-    color: #fff;
-    margin-top: 2rem;
-    border-top: 2px solid #228B22;
-  }
-  transition: all 0.2s;
-  border-radius: 3px;
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #32CD32;
+  color: #fff;
+  margin-top: 2rem;
+  border-top: 2px solid #228B22;
 }
 
 .delete-btn:hover {
