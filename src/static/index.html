@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mergington High School Activities</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Animación simple de fondo con líneas verdes */
+      body {
+        background: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background-image: linear-gradient(90deg, #c6ff00 2px, transparent 2px);
+        background-size: 50px 50px;
+        opacity: 0.05;
+        animation: moveLines 10s linear infinite;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      @keyframes moveLines {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(50px); }
+      }
+    </style>
   </head>
   <body>
     <header>
