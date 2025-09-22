@@ -22,50 +22,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function getCategory(name) {
-    if (name.includes("Club")) return "Club";
-    if (name.includes("Class")) return "Class";
-    if (name.includes("Team")) return "Team";
-    return "Other";
-  }
-
-  function renderActivities() {
-    activitiesList.innerHTML = "";
-    activitySelect.innerHTML = "";
-    const selectedCategory = categoryFilter ? categoryFilter.value : "";
-    const nameSearch = nameFilter ? nameFilter.value.toLowerCase() : "";
-    const sortBy = sortFilter ? sortFilter.value : "name";
-
-    let filtered = Object.entries(allActivities).filter(([name, details]) => {
-      const category = getCategory(name);
-      if (selectedCategory && category !== selectedCategory) return false;
-      if (nameSearch && !name.toLowerCase().includes(nameSearch)) return false;
-      return true;
+    // School Activities Signup JS
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('signup-form');
+        const resultDiv = document.getElementById('message');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('studentName').value.trim();
+                const activity = document.getElementById('activity').value;
+                if (!name || !activity) {
+                    resultDiv.textContent = 'Please enter your name and select an activity.';
+                    resultDiv.style.color = '#d32f2f';
+                    return;
+                }
+                resultDiv.textContent = `Thank you, ${name}! You have signed up for ${activity}.`;
+                resultDiv.style.color = '#32CD32';
+                form.reset();
+            });
+        }
     });
-
-    if (sortBy === "name") {
-      filtered.sort((a, b) => a[0].localeCompare(b[0]));
-    } else if (sortBy === "spots") {
-      filtered.sort((a, b) => {
-        const spotsA = a[1].max_participants - a[1].participants.length;
-        const spotsB = b[1].max_participants - b[1].participants.length;
-        return spotsB - spotsA;
-      });
-    }
-
-    filtered.forEach(([name, details]) => {
-      const activityCard = document.createElement("div");
-      activityCard.className = "activity-card";
-      const spotsLeft = details.max_participants - details.participants.length;
-      const participantsHTML =
-        details.participants.length > 0
-          ? `<div class="participants-section">
-              <h5>Participants:</h5>
-              <ul class="participants-list">
-                ${details.participants
-                  .map(
-                    (email) =>
-                      `<li><span class="participant-email">${email}</span><button class="delete-btn" data-activity="${name}" data-email="${email}">❌</button></li>`
                   )
                   .join("")}
               </ul>

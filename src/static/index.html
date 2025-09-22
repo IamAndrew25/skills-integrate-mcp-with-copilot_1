@@ -10,53 +10,59 @@
       body {
         background: white;
         position: relative;
-        overflow: hidden;
-      }
 
-      body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -50%;
-        width: 200%;
-        height: 100%;
-        background-image: linear-gradient(90deg, #c6ff00 2px, transparent 2px);
-        background-size: 50px 50px;
-        opacity: 0.05;
-        animation: moveLines 10s linear infinite;
-        pointer-events: none;
-        z-index: -1;
-      }
-
-      @keyframes moveLines {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(50px); }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
-    </header>
-
-    <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activity-filters" style="margin-bottom: 20px;">
-          <label for="category-filter">Category:</label>
-          <select id="category-filter">
-            <option value="">All</option>
-            <option value="Club">Club</option>
-            <option value="Class">Class</option>
-            <option value="Team">Team</option>
-            <option value="Other">Other</option>
-          </select>
-          <label for="name-filter" style="margin-left: 10px;">Name:</label>
-          <input type="text" id="name-filter" placeholder="Search by name" />
-          <label for="sort-filter" style="margin-left: 10px;">Sort by:</label>
-          <select id="sort-filter">
-            <option value="name">Name</option>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <title>Mergington High School Activities</title>
+          <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+          <header>
+            <div class="mascot-row">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Football_helmet_icon.png" alt="Mustang Mascot" class="mascot">
+              <h1>Mergington High School Activities</h1>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Basketball_icon.png" alt="Eagle Mascot" class="mascot">
+            </div>
+            <p class="school-pride">Go Mustangs! Go Eagles!</p>
+          </header>
+          <main>
+            <section class="activities">
+              <h2>Available Activities</h2>
+              <ul>
+                <li>Football</li>
+                <li>Basketball</li>
+                <li>Drama Club</li>
+                <li>Chess Club</li>
+                <li>Science Olympiad</li>
+              </ul>
+            </section>
+            <section class="signup">
+              <h2>Sign Up</h2>
+              <form id="signupForm">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" name="studentName" required>
+                <label for="activity">Activity:</label>
+                <select id="activity" name="activity" required>
+                  <option value="">Select an activity</option>
+                  <option value="Football">Football</option>
+                  <option value="Basketball">Basketball</option>
+                  <option value="Drama Club">Drama Club</option>
+                  <option value="Chess Club">Chess Club</option>
+                  <option value="Science Olympiad">Science Olympiad</option>
+                </select>
+                <button type="submit">Sign Up</button>
+              </form>
+              <div id="signupResult"></div>
+            </section>
+          </main>
+          <footer>
+            <p>&copy; 2025 Mergington High School</p>
+          </footer>
+          <script src="app.js"></script>
+        </body>
+        </html>
             <option value="spots">Available Spots</option>
           </select>
         </div>
